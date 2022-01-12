@@ -1,0 +1,22 @@
+{
+  "name": "localy",
+  "version": "1.0.0",
+  "description": "Full Stack School Solo Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codecloud9/localy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codecloud9/localy/issues"
+  },
+  "homepage": "https://github.com/codecloud9/localy#readme",
+  "dependencies": {
+    "create-react-app": "^5.0.0"
+  }
+}
