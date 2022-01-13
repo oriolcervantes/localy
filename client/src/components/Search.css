@@ -1,0 +1,37 @@
+.searchForm {
+  position: absolute;
+  top: 2%;
+  left: 4%;
+  display: flex;
+  width: 80vw;
+  height: 5vh;
+  z-index: 999;
+}
+
+.searchBar {
+  width: 80%;
+  border: none;
+  border-radius: 25px;
+}
+
+.searchBar:focus {
+  border: 3px solid blue;
+  padding-left: 10px;
+}
+
+.searchBtn {
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  margin-left: 10px;
+}
+
+.searchBtn:hover {
+  border: 3px solid blue;
+}
+
+.searchBtn img {
+  width: 70%;
+}
