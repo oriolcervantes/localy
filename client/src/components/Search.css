@@ -12,11 +12,11 @@
   width: 80%;
   border: none;
   border-radius: 25px;
+  padding-left: 10px;
 }
 
 .searchBar:focus {
-  border: 3px solid blue;
-  padding-left: 10px;
+  border: 1px solid blue;
 }
 
 .searchBtn {
