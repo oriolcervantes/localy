@@ -1,3 +1,6 @@
+const Sequelize = require("sequelize");
+
+
 module.exports = (sequelize, DataTypes) => {
 
   const Shop = sequelize.define("Shop", {
@@ -6,10 +9,9 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
     },
     name: DataTypes.STRING,
-    username: DataTypes.STRING,
-    password: DataTypes.STRING,
-    coordenates: DataTypes.STRING,
-    products: DataTypes.STRING,
+    latitude: DataTypes.FLOAT,
+    longitude: DataTypes.FLOAT,
+    products: DataTypes.ARRAY(Sequelize.TEXT),
     address: DataTypes.STRING,
     telephone: DataTypes.BIGINT,
     website: DataTypes.STRING,
