@@ -22,7 +22,7 @@ const Search = (props) => {
 
   return (
     <form className="searchForm" onSubmit={handleSubmit}>
-      <input className="searchBar" name="product" onChange={handleInputChange} type="text" value={search.product} placeholder="Find products" />
+      <input className="searchBar" name="product" onChange={handleInputChange} type="text" value={search.product} placeholder="Find shops by product" />
       <button className="searchBtn" type="submit"><img src={searchIcon} alt="Search" /></button>
     </form>
   )

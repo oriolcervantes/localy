@@ -1,19 +1,24 @@
-import React, { useState, useEffect } from 'react'
-import { MapContainer, TileLayer, Marker } from 'react-leaflet'
-import Search from './Search'
 import 'leaflet/dist/leaflet.css'
+import './MapView.css'
+import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
+import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import L from 'leaflet'
 import userPosition from '../assets/youarehere.png';
-import './MapView.css'
 import getShopsByKeyword from '../ApiClient'
+import Search from './Search'
+import ShopDetails from './ShopDetails'
 
 
 const MapView = () => {
 
   const location = useLocation();
   const [shopList, setShopList] = useState([]);
-
+  const [shopDetails, setShopDetails] = useState({
+    show: false,
+    styles: { transform: 'translateY(100%)' },
+    shop: {}
+  })
   const [state] = useState({
     currentLocation: { lat: location.state.latitude || 41.3879, lng: location.state.longitude || 2.16992 },
     zoom: 20
@@ -28,6 +33,14 @@ const MapView = () => {
     setShopList(shops);
   }
 
+  const populateDetails = (id) => {
+    setShopDetails({
+      show: true,
+      styles: { transform: 'translateY(70%)' },
+      shop: shopList.filter(shop => shop.id === id),
+    })
+  }
+
   return (
     <MapContainer center={state.currentLocation} zoom={state.zoom} zoomControl={false}>
       <Search className="searchComponent" filterShops={filterShops} />
@@ -36,8 +49,12 @@ const MapView = () => {
         url='https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png'
       />
       <Marker position={state.currentLocation} icon={youAreHere} />
-      {shopList.map(shop => <Marker key={shop.id} position={{ lat: `${shop.latitude}`, lng: `${shop.longitude}` }} icon={youAreHere} />)}
-
+      {shopList.map(shop => <Marker
+        key={shop.id}
+        position={{ lat: `${shop.latitude}`, lng: `${shop.longitude}` }}
+        icon={youAreHere}
+        eventHandlers={{ click: (e) => { populateDetails(shop.id) } }} />)}
+      <ShopDetails shopDetails={shopDetails} />
     </MapContainer>
   )
 }
