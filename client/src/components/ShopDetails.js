@@ -18,7 +18,7 @@ const ShopDetails = (props) => {
           <p>{shop.address}</p>
           <p>{shop.telephone}</p>
           <p>{shop.website}</p>
-          <button onClick={(e) => (e) => { unfoldDetails() }}>See more</button>
+          <button onClick={(e) => { unfoldDetails() }}>See more</button>
         </div>
         :
         <></>}

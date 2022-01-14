@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom'
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import L from 'leaflet'
 import userPosition from '../assets/youarehere.png';
-import getShopsByKeyword from '../ApiClient'
+import { getShopsByKeyword } from '../ApiClient'
 import Search from './Search'
 import ShopDetails from './ShopDetails'
 

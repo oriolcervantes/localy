@@ -9,7 +9,7 @@ function fetchRequest(url, options) {
     });
 }
 
-function getShopsByKeyword(keyword) {
+export function getShopsByKeyword(keyword) {
   keyword = { keyword: keyword }
   return fetchRequest(`${URL}/filteredshops`, {
     method: "POST",
@@ -20,4 +20,48 @@ function getShopsByKeyword(keyword) {
   });
 }
 
-export default getShopsByKeyword
+export function register(user) {
+  return fetchRequest(`${URL}/register`, {
+    method: "POST",
+    credentials: 'include',
+    mode: 'cors',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(user)
+  });
+}
+
+export function login(user) {
+  return fetchRequest(`${URL}/login`, {
+    method: "POST",
+    credentials: 'include',
+    mode: 'cors',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(user)
+  });
+}
+
+export function profile() {
+  return fetchRequest(`${URL}/login`, {
+    method: "GET",
+    credentials: 'include',
+    mode: 'cors',
+    headers: {
+      "Content-Type": "application/json"
+    },
+  });
+}
+
+export function logout() {
+  return fetchRequest(`${URL}/logout`, {
+    method: "POST",
+    credentials: 'include',
+    mode: 'cors',
+    headers: {
+      "Content-Type": "application/json"
+    },
+  });
+}
