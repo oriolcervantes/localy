@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './ShopAuth.css'
 import { login, register } from '../ApiClient'
+import { useNavigate } from 'react-router-dom';
 
 const ShopAuth = (props) => {
 
@@ -11,9 +12,10 @@ const ShopAuth = (props) => {
   });
 
   const [user, setUser] = useState({
-    username: "",
+    firstName: "",
+    lastName: "",
+    email: "",
     password: "",
-    email: ""
   })
 
   useEffect(() => {
@@ -31,14 +33,17 @@ const ShopAuth = (props) => {
     })
   }
 
-  const handleLogin = (e) => {
+  const navigate = useNavigate();
+  const handleLogin = async (e) => {
     e.preventDefault();
-    login(user);
+    await login(user);
+    navigate('/profile');
   }
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
-    register(user);
+    await register(user);
+    navigate('/profile');
   }
 
   const hideForm = () => {
@@ -47,11 +52,24 @@ const ShopAuth = (props) => {
       styles: { transform: 'translateY(100%)' },
       which: "none"
     })
+
+    setUser({
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+    })
   }
 
   const toggleForm = () => {
-    const toWhichForm = form.which === 'login' ? 'register' : 'login'
-    setForm({ ...form, which: toWhichForm })
+    const toWhichForm = form.which === 'login' ? 'register' : 'login';
+    setForm({ ...form, which: toWhichForm });
+    setUser({
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+    })
   }
 
   return (
@@ -62,8 +80,8 @@ const ShopAuth = (props) => {
             <>
               <form onSubmit={handleLogin}>
                 <h1>Log In</h1>
-                <label>Username
-                  <input name='username' onChange={handleInputChange} type='text' value={user.username} placeholder='Enter your username' required />
+                <label>E-mail
+                  <input name='email' onChange={handleInputChange} type='email' value={user.email} placeholder='Enter your email' required />
                 </label>
                 <label>Password
                   <input name='password' onChange={handleInputChange} type='password' value={user.password} placeholder='Enter your password' required />
@@ -77,14 +95,17 @@ const ShopAuth = (props) => {
             <>
               <form onSubmit={handleRegister}>
                 <h1>Register</h1>
-                <label> Username
-                  <input name='username' onChange={handleInputChange} type='text' value={user.username} placeholder='Enter your username' required />
+                <label> First Name
+                  <input name='firstName' onChange={handleInputChange} type='text' value={user.firstName} placeholder='Enter your first name' required />
+                </label>
+                <label> Last Name
+                  <input name='lastName' onChange={handleInputChange} type='text' value={user.lastName} placeholder='Enter your last name' required />
+                </label>
+                <label> E-mail
+                  <input name='email' onChange={handleInputChange} type='email' value={user.email} placeholder='Enter your e-mail' required />
                 </label>
                 <label> Password
                   <input name='password' onChange={handleInputChange} type='password' value={user.password} placeholder='Enter your password' required />
-                </label>
-                <label> e-mail
-                  <input name='e-mail' onChange={handleInputChange} type='email' value={user.email} placeholder='Enter your e-mail' required />
                 </label>
                 <button type='submit'>Register</button>
               </form>

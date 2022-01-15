@@ -20,6 +20,17 @@ export function getShopsByKeyword(keyword) {
   });
 }
 
+export function getShopsByUserId(UserId) {
+  UserId = { UserId: UserId }
+  return fetchRequest(`${URL}/usershops`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(UserId)
+  });
+}
+
 export function register(user) {
   return fetchRequest(`${URL}/register`, {
     method: "POST",
@@ -45,7 +56,7 @@ export function login(user) {
 }
 
 export function profile() {
-  return fetchRequest(`${URL}/login`, {
+  return fetchRequest(`${URL}/profile`, {
     method: "GET",
     credentials: 'include',
     mode: 'cors',
@@ -63,5 +74,17 @@ export function logout() {
     headers: {
       "Content-Type": "application/json"
     },
+  });
+}
+
+export function createShop(shop) {
+  return fetchRequest(`${URL}/createshop`, {
+    method: "POST",
+    credentials: 'include',
+    mode: 'cors',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(shop)
   });
 }

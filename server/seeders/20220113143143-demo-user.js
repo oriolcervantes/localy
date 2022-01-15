@@ -12,7 +12,8 @@ module.exports = {
       telephone: 123456789,
       website: "www.muffinsandcakes.muffin",
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      UserId: 1
     },
     {
       id: '2',
@@ -24,7 +25,8 @@ module.exports = {
       telephone: 123456789,
       website: "www.onlycakes.cake",
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      UserId: 1
     },
     {
       id: '3',
@@ -36,7 +38,8 @@ module.exports = {
       telephone: 123456789,
       website: "www.calantoniu.antoniu",
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      UserId: 1
     },
     {
       id: '4',
@@ -48,7 +51,8 @@ module.exports = {
       telephone: 123456789,
       website: "www.getthemgoddamnit.muffin",
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      UserId: 1
     },
     {
       id: '5',
@@ -60,7 +64,8 @@ module.exports = {
       telephone: 123456789,
       website: "www.wegonbananaaaaaaaas.ban",
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      UserId: 1
     }], {});
   },
 

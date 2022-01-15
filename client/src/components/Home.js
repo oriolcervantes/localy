@@ -40,7 +40,7 @@ const Home = () => {
   }, [])
 
   return (
-    <div>
+    <>
       <h1>Localy</h1>
       <p>Longitude: {state.longitude}</p>
       <p>Latitude: {state.latitude}</p>
@@ -49,7 +49,7 @@ const Home = () => {
       <button onClick={(e) => { handleClick("login") }}>Login</button>
       <button onClick={(e) => { handleClick("register") }}>Register</button>
       <ShopAuth activeForm={activeForm} />
-    </div>
+    </>
   )
 }
 

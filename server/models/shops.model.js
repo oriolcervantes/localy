@@ -1,22 +1,24 @@
-const Sequelize = require("sequelize");
+const { Model, DataTypes, Sequelize } = require('sequelize');
+const sequelize = require('.');
+const User = require('./users.model');
 
+class Shop extends Model { }
 
-module.exports = (sequelize, DataTypes) => {
+Shop.init({
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true
+  },
+  name: DataTypes.STRING,
+  latitude: DataTypes.FLOAT,
+  longitude: DataTypes.FLOAT,
+  products: DataTypes.ARRAY(Sequelize.TEXT),
+  address: DataTypes.STRING,
+  telephone: DataTypes.BIGINT,
+  website: DataTypes.STRING,
+}, { sequelize })
 
-  const Shop = sequelize.define("Shop", {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true
-    },
-    name: DataTypes.STRING,
-    latitude: DataTypes.FLOAT,
-    longitude: DataTypes.FLOAT,
-    products: DataTypes.ARRAY(Sequelize.TEXT),
-    address: DataTypes.STRING,
-    telephone: DataTypes.BIGINT,
-    website: DataTypes.STRING,
-  })
+Shop.belongsTo(User);
+User.hasMany(Shop);
 
-  return Shop;
-
-};
+module.exports = Shop;
