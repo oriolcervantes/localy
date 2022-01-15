@@ -88,3 +88,15 @@ export function createShop(shop) {
     body: JSON.stringify(shop)
   });
 }
+
+export function uploadImage(base64EncodedImage) {
+  return fetchRequest(`${URL}/uploadimage`, {
+    method: "POST",
+    credentials: 'include',
+    mode: 'cors',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ data: base64EncodedImage })
+  })
+}

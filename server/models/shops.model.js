@@ -16,6 +16,7 @@ Shop.init({
   address: DataTypes.STRING,
   telephone: DataTypes.BIGINT,
   website: DataTypes.STRING,
+  picture: DataTypes.STRING,
 }, { sequelize })
 
 Shop.belongsTo(User);

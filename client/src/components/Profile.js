@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { profile, logout, getShopsByUserId } from '../ApiClient'
 import CreateShopForm from './CreateShopForm'
-
+import ShopElement from './ShopElement'
 
 const Profile = () => {
   const [user, setUser] = useState({
     id: 0,
     firstName: '',
     lastName: '',
-    shops: false
+    shops: 0
   });
 
   const [shops, setShops] = useState([])
@@ -45,7 +45,7 @@ const Profile = () => {
         setUser((prevState) => {
           return {
             ...prevState,
-            shops: true
+            shops: shops.length
           };
         })
       } else {
@@ -54,7 +54,7 @@ const Profile = () => {
     }
     getProfile();
     getShops(user.id);
-  }, [user.id]);
+  }, [user.id, user.shops]);
 
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -76,10 +76,10 @@ const Profile = () => {
         Hi {user.firstName}, this is your dashboard!
       </h3>
       <h4>My Shops:</h4>
-      {user.shops ? shops.map(shop => <h5 key={shop.id}>{shop.name}</h5>) : <p>You have no shops in the map!</p>}
+      {shops.length ? shops.map(shop => <ShopElement key={shop.id} shop={shop} />) : <p>You have no shops in the map!</p>}
       <button onClick={handleCreateShop}>Create shop profile</button>
       <button onClick={handleLogout}>Logout</button>
-      <CreateShopForm activeForm={activeForm} UserId={user.id} />
+      <CreateShopForm activeForm={activeForm} setActiveForm={setActiveForm} UserId={user.id} user={user} setUser={setUser} />
     </section>
   )
 }

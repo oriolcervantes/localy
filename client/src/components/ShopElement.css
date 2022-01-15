@@ -1,0 +1,10 @@
+.shopElement {
+  display: flex;
+  width: 80vw;
+  height: 5vh;
+  align-items: center;
+}
+
+.showProfileBtn {
+  height: 50%;
+}
