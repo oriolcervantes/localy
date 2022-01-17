@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom'
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import L from 'leaflet'
 import userPosition from '../assets/youarehere.png';
+import shopPosition from '../assets/purple_pin_shadow.png';
 import { getShopsByKeyword } from '../ApiClient'
 import Search from './Search'
 import ShopDetails from './ShopDetails'
@@ -27,7 +28,13 @@ const MapView = () => {
 
   let youAreHere = L.icon({
     iconUrl: userPosition,
+    iconSize: [30, 30],
   });
+
+  const shopPin = L.icon({
+    iconUrl: shopPosition,
+    iconSize: [39, 50]
+  })
 
   async function filterShops(keyword) {
     const shops = await getShopsByKeyword(keyword);
@@ -60,7 +67,7 @@ const MapView = () => {
   // }
 
   return (
-    <MapContainer center={initialLocation.currentLocation} zoom={initialLocation.zoom} zoomControl={false}>
+    <MapContainer className="mapContainer" center={initialLocation.currentLocation} zoom={initialLocation.zoom} zoomControl={false}>
       <Search className="searchComponent" filterShops={filterShops} />
       <TileLayer
         attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
@@ -70,8 +77,8 @@ const MapView = () => {
       {shopList.map(shop => <Marker
         key={shop.id}
         position={{ lat: `${shop.latitude}`, lng: `${shop.longitude}` }}
-        icon={youAreHere}
-        eventHandlers={{ click: (e) => { showDetails(shop.id) } }} />)}
+        icon={shopPin}
+        eventHandlers={{ click: () => { showDetails(shop.id) } }} />)}
       <ShopDetails shopDetails={shopDetails} setShopDetails={setShopDetails} />
     </MapContainer>
   )

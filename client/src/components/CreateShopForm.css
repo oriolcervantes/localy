@@ -9,9 +9,55 @@
   flex-direction: column;
   z-index: 999;
   transition: transform .2s ease-in-out;
+  overflow-y: scroll;
+}
+
+.createShopLogotype {
+  display: block;
+  width: 20vw;
+  margin: 1vh 0 0 2vh;
+  padding: 1vh 0 0 0;
+}
+
+.createShopPinLogotype {
+  display: block;
+  width: 15vw;
+  margin: 0 auto;
+  padding: 2vh 0 0 0;
 }
 
 .createShopFormWrap form {
   display: flex;
   flex-direction: column;
+}
+
+.createShopH1 {
+  color: var(--purple);
+  text-align: center;
+  margin: 5vh auto 1vh auto;
+  font-weight: 400;
+  font-size: 4vw;
+}
+
+.createShopFormInput {
+  display: block;
+  margin: .5vh auto;
+  padding: 10px;
+  width: 70vw;
+  height: 5vh;
+  border-radius: 10px;
+  border: solid 4px var(--purple);
+  color: #8f8f8f;
+}
+
+.imgWrap {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 2vh;
+}
+
+.imgWrap img {
+  width: 100%;
 }

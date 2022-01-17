@@ -19,8 +19,8 @@ const ShopElement = ({ shop }) => {
 
   return (
     <div className="shopElement">
-      <h5>{shop.name}</h5>
-      <button className="showProfileBtn" onClick={showShopProfile}>Edit</button>
+      <h3 className="shopElementName">{shop.name}</h3>
+      <button className="shopElementEdit" onClick={showShopProfile}>Edit</button>
       <ShopProfile activeProfile={activeProfile} setActiveProfile={setActiveProfile} />
     </div>
   )

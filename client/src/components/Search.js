@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './Search.css'
-import searchIcon from '../assets/search.svg'
 
 const Search = (props) => {
 
@@ -22,8 +21,10 @@ const Search = (props) => {
 
   return (
     <form className="searchForm" onSubmit={handleSubmit}>
-      <input className="searchBar" name="product" onChange={handleInputChange} type="text" value={search.product} placeholder="Find shops by product" />
-      <button className="searchBtn" type="submit"><img src={searchIcon} alt="Search" /></button>
+      <div className="bar">
+        <input className="searchBar" name="product" onChange={handleInputChange} type="text" value={search.product} placeholder="Find shops by product" />
+        <button className="searchBtn" type="submit"><img src={require("../assets/search.png")} alt="Search" /></button>
+      </div>
     </form>
   )
 }

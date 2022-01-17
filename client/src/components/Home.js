@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import ShopAuth from './ShopAuth'
+import "./Home.css"
 
 const Home = () => {
 
@@ -40,16 +41,18 @@ const Home = () => {
   }, [])
 
   return (
-    <>
-      <h1>Localy</h1>
-      <p>Longitude: {state.longitude}</p>
-      <p>Latitude: {state.latitude}</p>
-      <Link to={'/map'} state={state} >Find Nearby Shops</Link>
-      <h2>Are you a shop owner?</h2>
-      <button onClick={(e) => { handleClick("login") }}>Login</button>
-      <button onClick={(e) => { handleClick("register") }}>Register</button>
-      <ShopAuth activeForm={activeForm} />
-    </>
+    <section className="homePageWrap">
+      <img className="whitePinLogotype" src={require("../assets/white_pin.png")} alt="Localy Pin Icon"></img>
+      <img className="fullLogotype" src={require("../assets/white_logo_full.png")} alt="Localy Logotype"></img>
+      <h1 className="homePageH1">Find your local shopkeeper</h1>
+      <Link className="mapLink" to={'/map'} state={state} ><button className="goToMapBtn">Go to Map</button></Link>
+      <section className="loginSection">
+        <h2 className="homePageH2">Are you a shop owner?</h2>
+        <button className="loginBtn" onClick={(e) => { handleClick("login") }}>Login</button>
+        <button className="registerBtn" onClick={(e) => { handleClick("register") }}>Register</button>
+        <ShopAuth activeForm={activeForm} />
+      </section>
+    </section>
   )
 }
 

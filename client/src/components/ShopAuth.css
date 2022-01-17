@@ -1,5 +1,8 @@
 .shopAuthWrap {
   background-color: white;
+  background-image: url("../assets/formpage_background.png");
+  background-size: cover;
+  background-position: center;
   width: 100vw;
   height: 100vh;
   position:absolute;
@@ -11,7 +14,105 @@
   transition: transform .2s ease-in-out;
 }
 
-.shopAuthWrap form {
+.loginPageH1 {
+  color: var(--purple);
+  text-align: center;
+  margin: 5vh auto 1vh auto;
+  font-weight: 400;
+  font-size: 4vw;
+}
+
+.loginForm {
   display: flex;
   flex-direction: column;
 }
+
+.formInput {
+  display: block;
+  margin: 1vh auto;
+  padding: 10px;
+  width: 70vw;
+  height: 5.5vh;
+  border-radius: 10px;
+  border: solid 4px var(--purple);
+  color: #8f8f8f;
+}
+
+.formInput:focus {
+  box-shadow: 0px 0px 5px rgb(80, 31, 255);
+  outline: none;
+  color: black;
+}
+
+.submitBtn {
+  display: block;
+  margin: 1vh auto;
+  width: 70vw;
+  height: 5.5vh;
+  border-radius: 10px;
+  background-color: var(--purple);
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.formPageH2 {
+  color: var(--purple);
+  text-align: center;
+  margin: 12vh auto 2vh auto;
+  font-weight: 400;
+  font-size: 4vw;
+}
+
+.regFormPageH2 {
+  color: var(--purple);
+  text-align: center;
+  margin: 5vh auto 2vh auto;
+  font-weight: 400;
+  font-size: 4vw;
+}
+
+.changeFormBtn {
+  display:block;
+  margin: 0 auto;
+  background-color: white;
+  border: solid 4px var(--purple);
+  width: 35vw;
+  height: 5vh;
+  border-radius: 15px;
+  color: var(--purple);
+  font-size: 5vw;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.closeFormBtn {
+  position: absolute;
+  top: 2vh;
+  right: 2vh;
+  width: 10vw;
+  height: 10vw;
+  border: none;
+  background-color: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.closeFormBtn img {
+  width: 100%;
+}
+
+.logLocalyFormIcon {
+  width: 10vw;
+  display: block;
+  margin: 10vh auto 0 auto;
+}
+
+.regLocalyFormIcon {
+  width: 10vw;
+  display: block;
+  margin: 6vh auto 0 auto;
+}
+

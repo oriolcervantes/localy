@@ -76,41 +76,34 @@ const ShopAuth = (props) => {
     <>
       {form.show === true ?
         <div className="shopAuthWrap" style={form.styles}>
+          <img className="whitePinLogotype" src={require("../assets/purple_pin.png")} alt="Localy Pin Icon"></img>
+          <img className="fullLogotype" src={require("../assets/purple_logo_full.png")} alt="Localy Logotype"></img>
+          <h1 className="loginPageH1">Introduce your login details</h1>
           {form.which === 'login' ?
             <>
-              <form onSubmit={handleLogin}>
-                <h1>Log In</h1>
-                <label>E-mail
-                  <input name='email' onChange={handleInputChange} type='email' value={user.email} placeholder='Enter your email' required />
-                </label>
-                <label>Password
-                  <input name='password' onChange={handleInputChange} type='password' value={user.password} placeholder='Enter your password' required />
-                </label>
-                <button type='submit'>Log In</button>
+              <form className="loginForm" onSubmit={handleLogin}>
+                <input className="formInput" name='email' onChange={handleInputChange} type='email' value={user.email} placeholder='Enter your email' required />
+                <input className="formInput" name='password' onChange={handleInputChange} type='password' value={user.password} placeholder='Enter your password' required />
+                <button className="submitBtn" type='submit'>Log In</button>
               </form>
-              <button onClick={toggleForm}>I don't have an account yet</button>
-              <button onClick={hideForm}>Take me back</button>
+              <h2 className="formPageH2">I don't have a shopkeeper account</h2>
+              <button className="changeFormBtn" onClick={toggleForm}>Register</button>
+              <img className="logLocalyFormIcon" src={require("../assets/purple_logo_short.png")} alt="Localy Icon"></img>
+              <button className="closeFormBtn" onClick={hideForm}><img src={require("../assets/cross.png")} alt="Click to close" /></button>
             </>
             :
             <>
               <form onSubmit={handleRegister}>
-                <h1>Register</h1>
-                <label> First Name
-                  <input name='firstName' onChange={handleInputChange} type='text' value={user.firstName} placeholder='Enter your first name' required />
-                </label>
-                <label> Last Name
-                  <input name='lastName' onChange={handleInputChange} type='text' value={user.lastName} placeholder='Enter your last name' required />
-                </label>
-                <label> E-mail
-                  <input name='email' onChange={handleInputChange} type='email' value={user.email} placeholder='Enter your e-mail' required />
-                </label>
-                <label> Password
-                  <input name='password' onChange={handleInputChange} type='password' value={user.password} placeholder='Enter your password' required />
-                </label>
-                <button type='submit'>Register</button>
+                <input className="formInput" name='firstName' onChange={handleInputChange} type='text' value={user.firstName} placeholder='Enter your first name' required />
+                <input className="formInput" name='lastName' onChange={handleInputChange} type='text' value={user.lastName} placeholder='Enter your last name' required />
+                <input className="formInput" name='email' onChange={handleInputChange} type='email' value={user.email} placeholder='Enter your e-mail' required />
+                <input className="formInput" name='password' onChange={handleInputChange} type='password' value={user.password} placeholder='Enter your password' required />
+                <button className="submitBtn" type='submit'>Register</button>
               </form>
-              <button onClick={toggleForm}>I already have an account</button>
-              <button onClick={hideForm}>Take me back</button>
+              <h2 className="regFormPageH2">I already have an account</h2>
+              <button className="changeFormBtn" onClick={toggleForm}>Log In</button>
+              <img className="regLocalyFormIcon" src={require("../assets/purple_logo_short.png")} alt="Localy Icon"></img>
+              <button className="closeFormBtn" onClick={hideForm}><img src={require("../assets/cross.png")} alt="Click to close" /></button>
             </>
           }
         </div>
