@@ -12,9 +12,16 @@
 }
 
 .shopDetailsName {
-  margin: 2vh 2vh 3vh 5vw;
+  margin: 2vh 2vh 0vh 5vw;
   font-weight: 900;
   display: inline-block;
+  font-size: 18px;
+}
+
+.shopDetailsShopCategory {
+  font-size: 14px;
+  margin: 0vh 2vh 3vh 5vw;
+  font-weight: 400;
 }
 
 .unfoldDetailsBtn {
@@ -33,28 +40,32 @@
 }
 
 .shopDetailsText {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
 }
 
 .shopDetailsIcon {
   margin-right: 1vh;
+  padding-top: .25vh;
   width: 20px;
+  height: fit-content;
 }
 
 .shopImagesWrap {
   display: flex;
   overflow-x: scroll;
+  margin-left: 1vh;
+  margin-bottom: 2vh;
 }
 
 .imageWrap {
-  margin: 4vw 5vw 5vw 3vw;
-  box-shadow: 0 0 15px rgb(129, 129, 129);
+  margin: 4vw 3vw 5vw 3vw;
+  box-shadow: 0 0 10px rgb(129, 129, 129);
   width: 300px;
   height: 200px;
   border-radius: 20px;
   object-fit: fill;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .shopImage {

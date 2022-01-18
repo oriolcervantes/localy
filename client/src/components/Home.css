@@ -32,7 +32,7 @@
   display: block;
   margin: 0 auto;
   text-decoration: none;
-  width: 40vw;
+  width: 45vw;
   height: 6vh;
 }
 
@@ -40,7 +40,7 @@
   background: none;
   border: none;
   background-color: white;
-  width: 40vw;
+  width: 45vw;
   height: 6vh;
   border-radius: 15px;
   color: var(--purple);

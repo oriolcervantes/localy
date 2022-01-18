@@ -16,12 +16,14 @@ const CreateShopForm = (props) => {
 
   const [shop, setShop] = useState({
     name: "",
-    latitude: null,
-    longitude: null,
+    category: "",
     address: "",
     telephone: null,
     email: "",
     website: "",
+    description: "",
+    latitude: null,
+    longitude: null,
     products: "",
     picture: ""
   })
@@ -62,7 +64,6 @@ const CreateShopForm = (props) => {
       [e.target.name]: e.target.value
     })
     const file = e.target.files[0];
-    console.log(file);
     previewFile(file);
   }
 
@@ -87,21 +88,28 @@ const CreateShopForm = (props) => {
       <img className="createShopPinLogotype" src={require("../assets/purple_pin.png")} alt="Localy Pin Icon" />
       <form onSubmit={handleSubmit}>
         <h1 className="createShopH1">Place a new shop in the map!</h1>
+        <label className="createShopFormLabel">Shop details</label>
         <input className="createShopFormInput" name='name' onChange={handleInputChange} type='text' value={shop.name} placeholder='Enter the name of your shop' required />
-        <input className="createShopFormInput" name='latitude' onChange={handleInputChange} type='text' value={shop.latitude} placeholder='Enter the extact latitude' required />
-        <input className="createShopFormInput" name='longitude' onChange={handleInputChange} type='text' value={shop.longitude} placeholder='Enter the exact longitude' required />
+        <input className="createShopFormInput" name='category' onChange={handleInputChange} type='text' value={shop.category} placeholder='Enter a category (e.g. Coffee House)' required />
         <input className="createShopFormInput" name='address' onChange={handleInputChange} type='text' value={shop.address} placeholder='Enter the full address' />
         <input className="createShopFormInput" name='telephone' onChange={handleInputChange} type='text' value={shop.telephone} placeholder='Where to call you?' />
         <input className="createShopFormInput" name='email' onChange={handleInputChange} type='email' value={shop.email} placeholder='Where to e-mail you?' />
         <input className="createShopFormInput" name='website' onChange={handleInputChange} type='text' value={shop.website} placeholder='Enter your website' />
+        <textarea className="describeShopFormInput" name='description' onChange={handleInputChange} value={shop.description} placeholder='Describe your business!' required />
+        <label className="createShopFormLabel">Shop Location</label>
+        <input className="createShopFormInput" name='latitude' onChange={handleInputChange} type='text' value={shop.latitude} placeholder='Enter the exact latitude' required />
+        <input className="createShopFormInput" name='longitude' onChange={handleInputChange} type='text' value={shop.longitude} placeholder='Enter the exact longitude' required />
+        <label className="createShopFormLabel">Products and Services</label>
         <input className="createShopFormInput" name='products' onChange={handleInputChange} type='text' value={shop.products} placeholder='List your products, comma separated' required />
-        <input className="createShopFormInput" name='picture' onChange={handleFileInputChange} type='file' value={shop.picture} />
-        <button className="submitBtn" type='submit'>Place in map!</button>
+        <label className="createShopFormLabel" >Main Picture</label>
+        <label className="createShopFormFileLabel" htmlFor="fileUpload">Select Main Picture</label>
+        <input className="createShopFormFileInput" id="fileUpload" name='picture' onChange={handleFileInputChange} type='file' value={shop.picture} />
+        {previewSource && (<div className="imgWrap"><img src={previewSource} alt="Your shop"></img></div>)}
+        <button className="submitBtn submitShopFormBtn" type='submit'>Place in map!</button>
       </form>
       <button className="closeFormBtn" onClick={hideForm}><img src={require("../assets/cross.png")} alt="Click to close" /></button>
-      <div className="imgWrap">
-        {previewSource && (<img src={previewSource} alt="Your shop"></img>)}
-      </div>
+      <img className="profLocalyFormIcon" src={require("../assets/purple_logo_short.png")} alt="Localy Icon"></img>
+
     </div>
   )
 }

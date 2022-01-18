@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './ShopElement.css'
 import ShopProfile from './ShopProfile'
 
-const ShopElement = ({ shop }) => {
+const ShopElement = ({ shop, updateShopsState }) => {
 
   const [activeProfile, setActiveProfile] = useState({
     show: false,
@@ -21,7 +21,7 @@ const ShopElement = ({ shop }) => {
     <div className="shopElement">
       <h3 className="shopElementName">{shop.name}</h3>
       <button className="shopElementEdit" onClick={showShopProfile}>Edit</button>
-      <ShopProfile activeProfile={activeProfile} setActiveProfile={setActiveProfile} />
+      <ShopProfile activeProfile={activeProfile} setActiveProfile={setActiveProfile} shop={shop} updateShopsState={updateShopsState} />
     </div>
   )
 }

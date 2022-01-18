@@ -5,18 +5,17 @@ const User = require('./users.model');
 class Shop extends Model { }
 
 Shop.init({
-  // id: {
-  //   type: DataTypes.INTEGER,
-  //   primaryKey: true
-  // },
   name: DataTypes.STRING,
+  category: DataTypes.STRING,
+  address: DataTypes.STRING,
+  telephone: DataTypes.BIGINT,
+  email: DataTypes.STRING,
+  website: DataTypes.STRING,
+  description: DataTypes.STRING,
   latitude: DataTypes.FLOAT,
   longitude: DataTypes.FLOAT,
   products: DataTypes.ARRAY(Sequelize.TEXT),
-  address: DataTypes.STRING,
-  telephone: DataTypes.BIGINT,
-  website: DataTypes.STRING,
-  picture: DataTypes.STRING,
+  picture: DataTypes.ARRAY(Sequelize.TEXT),
 }, { sequelize })
 
 Shop.belongsTo(User);

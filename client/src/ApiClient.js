@@ -100,3 +100,39 @@ export function uploadImage(base64EncodedImage) {
     body: JSON.stringify({ data: base64EncodedImage })
   })
 }
+
+export function addImage(shopIdAndImgUrlObj) {
+  return fetchRequest(`${URL}/addimage`, {
+    method: "POST",
+    credentials: 'include',
+    mode: 'cors',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(shopIdAndImgUrlObj)
+  })
+}
+
+export function addProducts(shopIdAndProductsObj) {
+  return fetchRequest(`${URL}/addproducts`, {
+    method: "POST",
+    credentials: 'include',
+    mode: 'cors',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(shopIdAndProductsObj)
+  })
+}
+
+export function removeProduct(shopIdAndProductObj) {
+  return fetchRequest(`${URL}/removeproduct`, {
+    method: "POST",
+    credentials: 'include',
+    mode: 'cors',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(shopIdAndProductObj)
+  })
+}

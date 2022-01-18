@@ -1,5 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
+@font-face {
+  font-family: "Silka";
+  src: url("./assets/fonts/Silka-Regular.otf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Silka";
+  src: url("./assets/fonts/Silka-Bold.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Silka";
+  src: url("./assets/fonts/Silka-Black.otf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Silka";
+  src: url("./assets/fonts/Silka-Black.otf");
+  font-weight: 300;
+}
+
 :root {
   --purple: #5700FF;
 }
@@ -8,7 +29,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Silka', 'Roboto', sans-serif;
 }
 
 body {

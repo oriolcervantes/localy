@@ -1,10 +1,38 @@
 .shopKeeperProfileWrap {
- background-image: url("../assets/profile_background.png");
- background-position: center;
- background-size: cover;
- width: 100vw;
- height: 100vh;
- overflow-y:hidden;
+  background-image: url("../assets/profile_background.png");
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow-y:hidden;
+}
+
+.logoutBtn {
+  position: absolute;
+  top: 2vh;
+  right: 3vh;
+  width: 7vw;
+  height: 7vw;
+  border: none;
+  background-color: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mapBtn {
+  position: absolute;
+  top: 2vh;
+  left: 3vh;
+  width: 9vw;
+  height: 9vw;
+  border: none;
+  background-color: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.logoutBtn img {
+  width: 100%;
 }
 
 .profileGreeting {
@@ -15,6 +43,10 @@
   margin-top: 2.2vh;
 }
 
+.mapBtn img {
+  width: 100%;
+}
+
 .shopsListTitle {
   text-align: center;
   color: var(--purple);
@@ -22,6 +54,23 @@
   font-weight: 900;
   margin-top: 27vh;
   margin-bottom: 2vh;
+}
+
+.noShopsWrap {
+ overflow-y: hidden;
+}
+
+.noShopsH3 {
+  text-align: center;
+  color: var(--purple);
+  font-size: 1.7vh;
+  font-weight: 400;
+  margin-top: 2vh;
+}
+
+.noShopsIllustration {
+  display: block;
+  margin: 0 auto;
 }
 
 .shopsWrap {
@@ -50,22 +99,6 @@
   font-size: 5vw;
   font-weight: 700;
   cursor: pointer;
-}
-
-.logoutBtn {
-  position: absolute;
-  top: 2vh;
-  right: 2vh;
-  width: 7vw;
-  height: 7vw;
-  border: none;
-  background-color: none;
-  background: transparent;
-  cursor: pointer;
-}
-
-.logoutBtn img {
-  width: 100%;
 }
 
 .profLocalyFormIcon {

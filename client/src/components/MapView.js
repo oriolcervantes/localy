@@ -23,7 +23,7 @@ const MapView = () => {
   })
   const [initialLocation] = useState({
     currentLocation: { lat: location.state.latitude || 41.3879, lng: location.state.longitude || 2.16992 },
-    zoom: 20
+    zoom: 17
   })
 
   let youAreHere = L.icon({

@@ -50,7 +50,7 @@ const Home = () => {
         <h2 className="homePageH2">Are you a shop owner?</h2>
         <button className="loginBtn" onClick={(e) => { handleClick("login") }}>Login</button>
         <button className="registerBtn" onClick={(e) => { handleClick("register") }}>Register</button>
-        <ShopAuth activeForm={activeForm} />
+        <ShopAuth activeForm={activeForm} state={state} />
       </section>
     </section>
   )

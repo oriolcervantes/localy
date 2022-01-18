@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import './ShopDetails.css'
 
 const ShopDetails = (props) => {
@@ -45,6 +44,7 @@ const ShopDetails = (props) => {
         <div className="shopDetails">
           <h1 className="shopDetailsName">{shop.name}</h1>
           <button className="unfoldDetailsBtn" onClick={toggleDetails}>{shopDetails.isFullyUnfolded ? seeLessButton : seeMoreButton}</button>
+          <h2 className="shopDetailsShopCategory">{shop.category}</h2>
           <div className="shopDetailsCategory">
             <img className="shopDetailsIcon" src={require("../assets/phone.png")} alt="Telephone Icon" />
             <p className="shopDetailsText">{shop.telephone}</p>
@@ -54,20 +54,19 @@ const ShopDetails = (props) => {
             <p className="shopDetailsText">{shop.address}</p>
           </div>
           <div className="shopImagesWrap">
-            <div className="imageWrap">
-              <img className="shopImage" src={shop.picture} alt="Shop"></img>
-            </div>
+            {shop.picture.map(picture => <div className="imageWrap">
+              <img className="shopImage" src={picture} alt="Shop"></img>
+            </div>)}
           </div>
           <div className="shopDetailsCategory">
             <img className="shopDetailsIcon" src={require("../assets/world.png")} alt="Web Icon" />
-            <p className="shopDetailsText">{shop.web}</p>
+            <p className="shopDetailsText">{shop.website}</p>
           </div>
           <div className="shopDetailsCategory">
             <img className="shopDetailsIcon" src={require("../assets/email.png")} alt="Email Icon" />
             <p className="shopDetailsText">{shop.email}</p>
           </div>
-          <p className="shopDetailsDescription">Lorem ipsum dolor sit amet, consectetur adipiscing  sit amet elit. Praesent sed odio maximus, feugiat mi vitae, venenatis dolor. Pellentesque ut elit at diam convallis interdum a dictum leo. Etiam sed rutrum felis, at sagittis est.
-            Suspendisse venenatis ultricies tortor eu facilisis. Sed turpis nunc, congue non sollicitudin nec, facilisis eget mauris. Pellentesque quis interdum odio. Ut eget iaculis dui. Nam ac sem hendrerit, sagittis nunc et, malesuada ipsum. Aliquam condimentum sollicitudin nulla, a convallis risus. In nisi dolor, pretium eu suscipit quis, vulputate et turpis</p>
+          <p className="shopDetailsDescription">{shop.description}</p>
           <button className="closeShopBtn" onClick={hideDetails}><img src={require("../assets/cross.png")} alt="Click to close" /></button>
         </div>
         :

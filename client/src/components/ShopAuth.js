@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 const ShopAuth = (props) => {
 
+  const state = props.state;
+
   const [form, setForm] = useState({
     show: props.activeForm.show,
     styles: props.activeForm.styles,
@@ -37,7 +39,7 @@ const ShopAuth = (props) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     await login(user);
-    navigate('/profile');
+    navigate('/profile', { state });
   }
 
   const handleRegister = async (e) => {
