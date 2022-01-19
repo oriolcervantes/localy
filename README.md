@@ -14,6 +14,10 @@ Once this is done, you should be able to see an empty shopkeeper profile. Go now
 ## What can be improved?
 So many things! This is a mobile-only addressed app so, for starters, it could be refactored into React Native. The bare minimum, though, would be to reconsider all the state management the app does at the moment, and improve it to make it more efficient and less bug-prone. Using context or Redux would reduce the bugs and increase maintainability and scalability.
 
+Also, the app deserves plenty more functionality. This is only a proof of concept, but in real life the users and the shopkeepers should be able to chat. A review system should also be implemented. Not to mention that shopkeepers should be able to do more basic requests like modifying their profile details, their shop's details, or deleting shops.
+
+Finally, the whole product-introduction system needs to be dramatically improved. At the moment, the database only accepts an array of comma separated words, without a space after the comma. This would lead to terrible malfunctioning in real live, where different cases, plurals and languages should be taken into account.
+
 ### Detected bugs
 This is the list of the current bugs to be solved:
 -	There is a current issue with the “see more / see less” button of the shops in the map. Sometimes it works, sometimes it doesn’t. Probably state-related.
