@@ -10,6 +10,7 @@
   background-image: url("../assets/profile_background.png");
  background-position: center;
  background-size: cover;
+ overflow-y: scroll;
 }
 
 .productsTitle {

@@ -2,9 +2,10 @@ const Shop = require("../models/shops.model");
 
 const createShop = async (req, res) => {
   try {
-    const { products } = req.body;
+    const { products, picture } = req.body;
     const prodArr = products.split(",");
-    const shop = await Shop.create({ ...req.body, products: prodArr })
+    const pictArr = picture.split(",");
+    const shop = await Shop.create({ ...req.body, products: prodArr, picture: pictArr })
     res.status(200).send(shop);
   } catch (error) {
     console.log(error);
@@ -39,6 +40,7 @@ const addProductsToShop = async (req, res) => {
     const { products } = req.body;
     const newProdArr = products.split(",");
     const shopId = req.body.shopId;
+
     const shop = Shop.findOne({
       where: { id: shopId }
     }).then(shop => {
