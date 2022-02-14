@@ -14,13 +14,13 @@ Welcome to Localy. This is a proof of concept for an app that aims at making con
 - Once that is done and you see the app on your browser, go to the inspector and adjust the view to mobile view. Being a proof of concept, this app has been developed by following a mobile only approach.
 
 ### Generating data
--You will need to create your own database and hook it. To that end, an `envexample` file is provided within `/server`, for you to hook the private information of your database.
+- You will need to create your own database and hook it. To that end, an `envexample` file is provided within `/server`, for you to hook the private information of your database.
 
--Once that is done, you are ready to populate the database. Register a new user through the app interface. You will need to provide with a first name, a last name, an e-mail and a password. All info can be, of course, fake.
+- Once that is done, you are ready to populate the database. Register a new user through the app interface. You will need to provide with a first name, a last name, an e-mail and a password. All info can be, of course, fake.
 
--Once this is done, you should be able to see an empty shopkeeper profile. Go now to `/server` on your terminal, and run `npx sequelize-cli db:seed:all`. This command will run the file you find on `server/seeders`, and will populate the database with 6 fake flower shops in a Barcelona neighbourhood. They will be automatically associated to the shopkeeper user you created. Once that is done, you are good to go.
+- Once this is done, you should be able to see an empty shopkeeper profile. Go now to `/server` on your terminal, and run `npx sequelize-cli db:seed:all`. This command will run the file you find on `server/seeders`, and will populate the database with 6 fake flower shops in a Barcelona neighbourhood. They will be automatically associated to the shopkeeper user you created. Once that is done, you are good to go.
 
--If you want to create new shops, you will need to create a Cloudinary account and hook the necessary information on your `.env` file by following the example in `envexample`.
+- If you want to create new shops, you will need to create a Cloudinary account and hook the necessary information on your `.env` file by following the example in `envexample`.
 
 ## What can be improved?
 So many things! This is a mobile-only addressed app so, for starters, it could be refactored into React Native. The bare minimum, though, would be to reconsider all the state management the app does at the moment, and improve it to make it more efficient and less bug-prone. Using context or Redux would reduce the bugs and increase maintainability and scalability.
