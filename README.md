@@ -1,7 +1,7 @@
 # Localy
 Welcome to my Full Stack School Solo Project. This is a proof of concept for an app that aims at making consumers and shopkeepers closer, in an age in which consumers too often buy their goodies online, and have them sent home from the other side of the world. Localy allows a consumer to find out about shops in their area, by searching for very specific products. It also allows shopkeepers to advertise themselves and be more visible to their neighbours.
 
-![(/localymock.png)]
+![Localy in your smartphone](/localymock.png)
 
 ## How to use it?
 Fork this repo and clone it on your local machine. Once in the folder, run `npm install` on the root folder, and also on `/server` and `/client`.
