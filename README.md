@@ -38,3 +38,6 @@ This is the list of the current bugs to be solved:
 -	The pin of the map should change when we click on it, to a different pin. That feature has still not been implemented.
 -	The whole CSS should be revisited to make it more adaptable to different mobile screens without losing proportions.
 
+## Author
+[Oriol Cervantes](https://github.com/oriolcervantes)
+
